@@ -1,0 +1,42 @@
+<main class="lista-vacantes">
+
+    <h2>Lista de vacantes</h2>
+
+    {{#if vacantes}}
+
+        {{#each vacantes}}
+            <div class="vacante">
+                <div class="caja">
+
+                    <h3>{{this.empresa}}</h3>
+                    <p class="puesto">{{this.titulo}}</p>
+
+                </div>
+
+                <div class="caja">
+
+                    <p class="etiqueta">Ubicación</p>
+                    <p class="nombre">{{this.ubicacion}}</p>
+
+                </div>
+
+                <div class="caja">
+
+                    <p class="etiqueta">Contrato</p>
+                    <p class="nombre contrato">{{this.contrato}}</p>
+
+                </div>
+
+                <div class="caja centrar-vertical">
+
+                    <a href="/vacantes/{{this.url}}" class="btn btn-verde">Más Info</a>
+
+                </div>
+
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No hay vacantes</p>
+    {{/if}}
+
+</main>
